@@ -57,19 +57,19 @@
 
 
 
-<meta name="description" content="1.let声明变量，声明的变量只在let命令所在的代码块内有效。var:1234567var a = [];for (var i = 0; i &amp;lt; 10; i++) &amp;#123;  a[i] = function () &amp;#123;    console.log(i);  &amp;#125;;&amp;#125;a[6](); // 10
-let:1234567var a = [];for (let i">
+<meta name="description" content="let声明变量，声明的变量只在let命令所在的代码块内有效。var:1234567var a = [];for (var i = 0; i &amp;lt; 10; i++) &amp;#123;  a[i] = function () &amp;#123;    console.log(i);  &amp;#125;;&amp;#125;a[6](); // 10
+let:1234567var a = [];for (let i =">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ECMAScript 6 学习笔记（1）-let和const命令">
 <meta property="og:url" content="http://stonewen.github.io/2016/02/18/ES6-1/index.html">
 <meta property="og:site_name" content="StoneWen's Blog">
-<meta property="og:description" content="1.let声明变量，声明的变量只在let命令所在的代码块内有效。var:1234567var a = [];for (var i = 0; i &amp;lt; 10; i++) &amp;#123;  a[i] = function () &amp;#123;    console.log(i);  &amp;#125;;&amp;#125;a[6](); // 10
-let:1234567var a = [];for (let i">
-<meta property="og:updated_time" content="2016-04-04T03:44:46.100Z">
+<meta property="og:description" content="let声明变量，声明的变量只在let命令所在的代码块内有效。var:1234567var a = [];for (var i = 0; i &amp;lt; 10; i++) &amp;#123;  a[i] = function () &amp;#123;    console.log(i);  &amp;#125;;&amp;#125;a[6](); // 10
+let:1234567var a = [];for (let i =">
+<meta property="og:updated_time" content="2016-04-04T04:04:33.072Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ECMAScript 6 学习笔记（1）-let和const命令">
-<meta name="twitter:description" content="1.let声明变量，声明的变量只在let命令所在的代码块内有效。var:1234567var a = [];for (var i = 0; i &amp;lt; 10; i++) &amp;#123;  a[i] = function () &amp;#123;    console.log(i);  &amp;#125;;&amp;#125;a[6](); // 10
-let:1234567var a = [];for (let i">
+<meta name="twitter:description" content="let声明变量，声明的变量只在let命令所在的代码块内有效。var:1234567var a = [];for (var i = 0; i &amp;lt; 10; i++) &amp;#123;  a[i] = function () &amp;#123;    console.log(i);  &amp;#125;;&amp;#125;a[6](); // 10
+let:1234567var a = [];for (let i =">
 
 
 
@@ -291,15 +291,14 @@ let:1234567var a = [];for (let i">
       
 
       
-        <p><strong>1.let</strong><br>声明变量，声明的变量只在let命令所在的代码块内有效。<br>var:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var a = [];</span><br><span class="line">for (var i = 0; i &lt; 10; i++) &#123;</span><br><span class="line">  a[i] = function () &#123;</span><br><span class="line">    console.log(i);</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line">a[6](); // 10</span><br></pre></td></tr></table></figure></p>
+        <h2 id="let"><a href="#let" class="headerlink" title="let"></a>let</h2><p>声明变量，声明的变量只在let命令所在的代码块内有效。<br>var:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var a = [];</span><br><span class="line">for (var i = 0; i &lt; 10; i++) &#123;</span><br><span class="line">  a[i] = function () &#123;</span><br><span class="line">    console.log(i);</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line">a[6](); // 10</span><br></pre></td></tr></table></figure></p>
 <p>let:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var a = [];</span><br><span class="line">for (let i = 0; i &lt; 10; i++) &#123;</span><br><span class="line">  a[i] = function () &#123;</span><br><span class="line">    console.log(i);</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line">a[6](); // 6</span><br></pre></td></tr></table></figure></p>
 <p>不存在变量提升<br>暂时性死区<br>不允许重复声明 </p>
-<p><strong>2.块级作用域</strong><br>块级作用域的出现，实际上使得获得广泛应用的立即执行匿名函数（IIFE）不再必要了<br>ES6规定，函数本身的作用域，在其所在的块级作用域之内，而ES5存在函数提升</p>
-<p><strong>3.const命令</strong><br>用来声明变量，但是声明的是常量。一旦声明，常量的值就不能改变。</p>
+<h2 id="块级作用域"><a href="#块级作用域" class="headerlink" title="块级作用域"></a>块级作用域</h2><p>块级作用域的出现，实际上使得获得广泛应用的立即执行匿名函数（IIFE）不再必要了<br>ES6规定，函数本身的作用域，在其所在的块级作用域之内，而ES5存在函数提升</p>
+<h2 id="const命令"><a href="#const命令" class="headerlink" title="const命令"></a>const命令</h2><p>用来声明变量，但是声明的是常量。一旦声明，常量的值就不能改变。</p>
 <p>对于复合类型的变量，变量名不指向数据，而是指向数据所在的地址</p>
 <p>对象冻结，应该使用Object.freeze方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var constantize = (obj) =&gt; &#123;</span><br><span class="line">  Object.freeze(obj);</span><br><span class="line">  Object.keys(obj).forEach( (key, value) =&gt; &#123;</span><br><span class="line">    if ( typeof obj[key] === &apos;object&apos; ) &#123;</span><br><span class="line">      constantize( obj[key] );</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
-<p><strong>4.跨模块常量</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">// constants.js 模块</span><br><span class="line">export const A = 1;</span><br><span class="line">export const B = 3;</span><br><span class="line">export const C = 4;</span><br><span class="line"></span><br><span class="line">// test1.js 模块</span><br><span class="line">import * as constants from &apos;./constants&apos;;</span><br><span class="line">console.log(constants.A); // 1</span><br><span class="line">console.log(constants.B); // 3</span><br><span class="line"></span><br><span class="line">// test2.js 模块</span><br><span class="line">import &#123;A, B&#125; from &apos;./constants&apos;;</span><br><span class="line">console.log(A); // 1</span><br><span class="line">console.log(B); // 3</span><br></pre></td></tr></table></figure>
+<h2 id="跨模块常量"><a href="#跨模块常量" class="headerlink" title="跨模块常量"></a>跨模块常量</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">// constants.js 模块</span><br><span class="line">export const A = 1;</span><br><span class="line">export const B = 3;</span><br><span class="line">export const C = 4;</span><br><span class="line"></span><br><span class="line">// test1.js 模块</span><br><span class="line">import * as constants from &apos;./constants&apos;;</span><br><span class="line">console.log(constants.A); // 1</span><br><span class="line">console.log(constants.B); // 3</span><br><span class="line"></span><br><span class="line">// test2.js 模块</span><br><span class="line">import &#123;A, B&#125; from &apos;./constants&apos;;</span><br><span class="line">console.log(A); // 1</span><br><span class="line">console.log(B); // 3</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -318,6 +317,20 @@ let:1234567var a = [];for (let i">
         </div>
       
 
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/04/03/hello-world/" rel="prev" title="Hello World">
+                Hello World <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
       
 
       
@@ -386,7 +399,7 @@ let:1234567var a = [];for (let i">
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">1</span>
+              <span class="site-state-item-count">2</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -434,7 +447,7 @@ let:1234567var a = [];for (let i">
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#let"><span class="nav-number">1.</span> <span class="nav-text">let</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#块级作用域"><span class="nav-number">2.</span> <span class="nav-text">块级作用域</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#const命令"><span class="nav-number">3.</span> <span class="nav-text">const命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#跨模块常量"><span class="nav-number">4.</span> <span class="nav-text">跨模块常量</span></a></li></ol></div>
             
           </div>
         </section>
