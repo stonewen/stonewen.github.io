@@ -2,10 +2,8 @@
 
 
 
-  
 
-
-<html class="theme-next pisces use-motion">
+<html class="theme-next pisces">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -75,7 +73,7 @@
     scheme: 'Pisces',
     sidebar: {"position":"left","display":"post"},
     fancybox: true,
-    motion: true,
+    motion: false,
     duoshuo: {
       userId: 0,
       author: '博主'
@@ -216,8 +214,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/02/18/ES6-1/" itemprop="url">
-                  ECMAScript 6 学习笔记（1）-let和const命令
+                <a class="post-title-link" href="/2016/04/04/css/" itemprop="url">
+                  css 总结
                 </a>
               
             
@@ -230,38 +228,19 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-02-18T16:00:04+08:00" content="2016-02-18">
-              2016-02-18
+            <time itemprop="dateCreated" datetime="2016-04-04T16:24:21+08:00" content="2016-04-04">
+              2016-04-04
             </time>
           </span>
 
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">笔记</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
           
 
           
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/02/18/ES6-1/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/02/18/ES6-1/" itemprop="commentsCount"></span>
+                <a href="/2016/04/04/css/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/04/css/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -271,7 +250,7 @@
 
           
           
-             <span id="/2016/02/18/ES6-1/" class="leancloud_visitors" data-flag-title="ECMAScript 6 学习笔记（1）-let和const命令">
+             <span id="/2016/04/04/css/" class="leancloud_visitors" data-flag-title="css 总结">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -294,14 +273,20 @@
       
         
           
-            <h2 id="let"><a href="#let" class="headerlink" title="let"></a>let</h2><p>声明变量，声明的变量只在let命令所在的代码块内有效。<br>var:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var a = [];</span><br><span class="line">for (var i = 0; i &lt; 10; i++) &#123;</span><br><span class="line">  a[i] = function () &#123;</span><br><span class="line">    console.log(i);</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line">a[6](); // 10</span><br></pre></td></tr></table></figure></p>
-<p>let:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var a = [];</span><br><span class="line">for (let i = 0; i &lt; 10; i++) &#123;</span><br><span class="line">  a[i] = function () &#123;</span><br><span class="line">    console.log(i);</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line">a[6](); // 6</span><br></pre></td></tr></table></figure></p>
-<p>不存在变量提升<br>暂时性死区<br>不允许重复声明 </p>
-<h2 id="块级作用域"><a href="#块级作用域" class="headerlink" title="块级作用域"></a>块级作用域</h2><p>块级作用域的出现，实际上使得获得广泛应用的立即执行匿名函数（IIFE）不再必要了<br>ES6规定，函数本身的作用域，在其所在的块级作用域之内，而ES5存在函数提升</p>
-<h2 id="const命令"><a href="#const命令" class="headerlink" title="const命令"></a>const命令</h2><p>用来声明变量，但是声明的是常量。一旦声明，常量的值就不能改变。</p>
-<p>对于复合类型的变量，变量名不指向数据，而是指向数据所在的地址</p>
-<p>对象冻结，应该使用Object.freeze方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var constantize = (obj) =&gt; &#123;</span><br><span class="line">  Object.freeze(obj);</span><br><span class="line">  Object.keys(obj).forEach( (key, value) =&gt; &#123;</span><br><span class="line">    if ( typeof obj[key] === &apos;object&apos; ) &#123;</span><br><span class="line">      constantize( obj[key] );</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
-<h2 id="跨模块常量"><a href="#跨模块常量" class="headerlink" title="跨模块常量"></a>跨模块常量</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">// constants.js 模块</span><br><span class="line">export const A = 1;</span><br><span class="line">export const B = 3;</span><br><span class="line">export const C = 4;</span><br><span class="line"></span><br><span class="line">// test1.js 模块</span><br><span class="line">import * as constants from &apos;./constants&apos;;</span><br><span class="line">console.log(constants.A); // 1</span><br><span class="line">console.log(constants.B); // 3</span><br><span class="line"></span><br><span class="line">// test2.js 模块</span><br><span class="line">import &#123;A, B&#125; from &apos;./constants&apos;;</span><br><span class="line">console.log(A); // 1</span><br><span class="line">console.log(B); // 3</span><br></pre></td></tr></table></figure>
+            <h2 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h2><h3 id="元素选择器"><a href="#元素选择器" class="headerlink" title="元素选择器"></a>元素选择器</h3><h3 id="类选择器"><a href="#类选择器" class="headerlink" title="类选择器"></a>类选择器</h3><p>可以单独使用，也可以与其他元素结合使用<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">*.important &#123;color:red;&#125;</span><br><span class="line">.important &#123;color:red;&#125;</span><br><span class="line">p.important &#123;color:red;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>多类选择器：class同时包含的类<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.important.warning &#123;background:silver;&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="ID选择器"><a href="#ID选择器" class="headerlink" title="ID选择器"></a>ID选择器</h3><p>与类不同，在一个 HTML 文档中，ID 选择器会使用一次，而且仅一次</p>
+<h3 id="属性选择器"><a href="#属性选择器" class="headerlink" title="属性选择器"></a>属性选择器</h3><img src="/2016/04/04/css/attribute.png" alt="attribute.png" title="">
+<h3 id="分组"><a href="#分组" class="headerlink" title="分组"></a>分组</h3><p>选择器分组使用逗号,<br>通配符选择器*<br>声明的分组使用分号;</p>
+<h3 id="后代选择器"><a href="#后代选择器" class="headerlink" title="后代选择器"></a>后代选择器</h3><p>选择作为某元素后代的元素,用空格</p>
+<h3 id="子元素选择器"><a href="#子元素选择器" class="headerlink" title="子元素选择器"></a>子元素选择器</h3><p>只能选择作为某元素子元素的元素,用&gt;</p>
+<h3 id="相邻兄弟选择器"><a href="#相邻兄弟选择器" class="headerlink" title="相邻兄弟选择器"></a>相邻兄弟选择器</h3><p>可选择紧接在另一元素后的元素，且二者有相同父元素,用+</p>
+<h3 id="伪类"><a href="#伪类" class="headerlink" title="伪类"></a>伪类</h3><img src="/2016/04/04/css/pseudo_classes.png" alt="pseudo_classes.png" title="">
+<p>提示：在 CSS 定义中，a:hover 必须被置于 a:link 和 a:visited 之后，才是有效的。<br>提示：在 CSS 定义中，a:active 必须被置于 a:hover 之后，才是有效的。</p>
+<h3 id="伪元素"><a href="#伪元素" class="headerlink" title="伪元素"></a>伪元素</h3><img src="/2016/04/04/css/pseudo_elements.png" alt="pseudo_elements.png" title="">
+<p>first-line，first-letter 伪元素只能用于块级元素</p>
+<h3 id="css3新增"><a href="#css3新增" class="headerlink" title="css3新增"></a>css3新增</h3><img src="/2016/04/04/css/css3_selectors.png" alt="css3_selectors.png" title="">
+
           
         
       
@@ -383,7 +368,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
